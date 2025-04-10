@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { WishItem } from '../shared/models/wishItem';
+import { FormsModule } from '@angular/forms';
+import { WishListComponent } from './wish-list/wish-list.component';
+
+
 
 const filters = [
     (item : WishItem) => item,
@@ -10,7 +14,9 @@ const filters = [
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+    styleUrls: ['./app.component.css'],
+    imports:[FormsModule, WishListComponent],
+    standalone:true
 })
 export class AppComponent {
     items : WishItem[] = [
